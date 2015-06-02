@@ -1,5 +1,6 @@
 require 'csv'
 require_relative 'album'
+require_relative 'track'
 require "pry"
 
 albums = []
