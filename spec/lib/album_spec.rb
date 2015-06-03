@@ -12,9 +12,20 @@ describe Album do
       expect(album.track_list).should include 'Singles'
     end
   end
+
+  describe "has artist" do
+    it 'should have an artist in the album' do
+      expect(album.artists).to eq('Future Islands')
+    end
+  end
+
+
+
 end
 
-#
+
+
+
 # album_id,track_id,title,track_number,duration_ms,album_name,artists
 # 1dKh4z5Aayt8FFDWjO5FDh,7pkrYfwDOixoFKdc84YFHf,Spirit,2,261773,Singles,Future Islands
 #

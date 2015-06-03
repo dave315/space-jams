@@ -15,9 +15,9 @@ CSV.foreach('space_jams.csv', headers: true, header_converters: :symbol) do |row
     albums << album
   end
   # add the track to the album's @tracks instance variable
-  album.tracks << Track.new(track[:track_id], track[:title], track[:track_number], track[:duration_ms])
-
-end
+    new_track = Track.new(track[:track_id], track[:title], track[:track_number], track[:duration_ms])
+    album.tracks(new_track) #<< new_track
+  end
 
 # print out the summary for each album
 albums.each do |album|

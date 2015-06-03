@@ -1,7 +1,7 @@
 require_relative "track"
 
 class Album
-  attr_reader :artists, :title, :id, :tracks
+  attr_reader :artists, :title, :id
   def initialize(album_id, album_name, artists)
     @title = album_name
     @id = album_id
@@ -17,9 +17,14 @@ class Album
     duration.round(2)
   end
 
+  def tracks(new_track)
+    @tracks << new_track
+    @tracks
+  end
+  
   def track_list
     string = String.new
-    tracks.each do |track|
+    @tracks.each do |track|
       string += "- #{track.title}\n"
     end
     string
